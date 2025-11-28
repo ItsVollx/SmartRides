@@ -23,6 +23,8 @@ public final class PlayerInteractListener extends PlayerListener {
 
         if (player.getItemInHand().getTypeId() != ConfigManager.interactItemId()) return;
 
+        if(player.isSneaking())return;
+
         PlayerAnimator.playArmSwingAnimation(player);
         CustomPigMovement.toggleMovementTask(player, pig);
     }
